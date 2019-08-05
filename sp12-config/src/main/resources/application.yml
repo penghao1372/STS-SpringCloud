@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config
+ #     preferred-networks:
+ #    - 192.168.0
+
+#        git:
+#          uri: https://github.com/penghao1372/sp-config
+#          searchPaths: config
+          #username: your-username
+          #password: your-password
+    
+  rabbitmq:
+    host: 192.168.21.131
+    port: 5672
+    username: admin
+    password: admin
+
+    
+server:
+  port: 6001
+    
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+  client:
+    service-url:
+      defaultZone: http://eureka1:2001/eureka, http://eureka2:2002/eureka
+      
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh
