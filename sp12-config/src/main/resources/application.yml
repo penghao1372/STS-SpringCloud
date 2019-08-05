@@ -12,7 +12,7 @@ spring:
  #    - 192.168.0
 
 #        git:
-#          uri: https://github.com/penghao1372/sp-config
+#          uri: https://github.com/penghao1372/STS-SpringCloud
 #          searchPaths: config
           #username: your-username
           #password: your-password
